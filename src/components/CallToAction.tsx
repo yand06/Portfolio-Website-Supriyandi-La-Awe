@@ -48,17 +48,17 @@ export const CallToAction = ({ email }: CallToActionProps) => {
             <img
               src={fastworkIconImg}
               alt="Fastwork"
-              className="w-5 h-5 mr-2"
+              className="w-6 h-6 mr-2"
             />
-            Hire Me
+            Get in Touch
           </Button>
           <Button
             onClick={handleCopyEmail}
             variant="secondary"
             size="lg"
-            className="bg-secondary hover:bg-secondary/80 text-lg"
+            className="bg-white hover:bg-secondary/80 text-lg"
           >
-            <Copy className="w-5 h-5 mr-2" />
+            <Copy className="w-6 h-6 mr-2" />
             Copy Email
           </Button>
         </div>

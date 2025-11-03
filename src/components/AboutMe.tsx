@@ -54,19 +54,46 @@ export const AboutMe = () => {
         }`}
       >
         <p className="text-lg text-foreground mb-4 leading-relaxed">
-          I am a dedicated{" "}
-          <span className="font-semibold text-primary">
+          I am a dedicated and passionate{" "}
+          <span
+            className="font-semibold text-primary cursor-pointer"
+            onClick={() =>
+              window.open(
+                "https://www.dicoding.com/blog/apa-itu-full-stack-developer-keahlian-keahlian-yang-harus-dikuasai/",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
             Fullstack Developer
           </span>{" "}
-          with over one year of professional experience in developing scalable
-          web applications. I focus on delivering efficient and user-centric
-          solutions that effectively address real-world challenges.
+          specializing in building robust web applications using Java Spring
+          Boot, Hibernate, Vite, React, TypeScript, and Tailwind CSS. I focus on
+          creating efficient, user-friendly solutions with experience delivering
+          scalable backend systems and modern responsive frontends.
+        </p>
+        <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+          I thrive in{" "}
+          <span
+            className="font-semibold text-primary cursor-pointer"
+            onClick={() =>
+              window.open(
+                "https://www.dicoding.com/blog/konsep-agile-pada-software-development/",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
+          >
+            Agile
+          </span>{" "}
+          team environments, prioritizing clean code and automated testing to
+          ensure reliability. Beyond coding, I am continuously learning new
+          technologies and enjoy sharing knowledge through blogging and
+          mentoring.
         </p>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          My methodology integrates best practices in clean coding, modern
-          technologies, and a comprehensive understanding of both frontend and
-          backend architectures. I excel at transforming complex requirements
-          into elegant, maintainable systems.
+          I believe the right technology and effective collaboration drive
+          successful projects. Let’s build something great together!
         </p>
       </div>
 

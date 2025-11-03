@@ -13,9 +13,7 @@ interface ProfileCardProps {
 export const ProfileCard = ({ profile }: ProfileCardProps) => {
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(profile.email);
-    toast.success("Email copied to clipboard!", {
-      icon: <CheckCircle2 className="w-4 h-4" />,
-    });
+    toast.success("Email copied to clipboard!");
   };
 
   const handleHireMe = () => {
@@ -71,16 +69,16 @@ export const ProfileCard = ({ profile }: ProfileCardProps) => {
               <img
                 src={fastworkIconImg}
                 alt="Fastwork"
-                className="w-4 h-4 mr-2"
+                className="w-5 h-5 mr-2"
               />
-              Hire Me
+              Get in Touch
             </Button>
             <Button
               onClick={handleCopyEmail}
               variant="secondary"
               className="w-full sm:w-auto bg-secondary hover:bg-secondary/80"
             >
-              <Copy className="w-4 h-4 mr-2" />
+              <Copy className="w-5 h-5 mr-2" />
               Copy Email
             </Button>
           </div>

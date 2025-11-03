@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
-import { Home, User, MessageSquareQuote, Briefcase, Mail } from "lucide-react";
+import {
+  Home,
+  User,
+  MessageSquareQuote,
+  Briefcase,
+  Mail,
+  FileUser,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const TopBar = () => {
@@ -70,10 +77,17 @@ export const TopBar = () => {
           <Button
             variant="default"
             size="sm"
-            onClick={() => scrollToSection("contact")}
+            onClick={() =>
+              window.open(
+                "https://cv-task-fe.vercel.app/",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
             className="bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-transform"
           >
-            Hire Me
+            <FileUser className="text-white" />
+            My CV
           </Button>
         </div>
       </div>

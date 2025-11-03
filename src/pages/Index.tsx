@@ -43,20 +43,20 @@ const projects: Project[] = [
 const products: Product[] = [
   {
     id: "1",
-    title: "React Admin Template (Example)",
-    tag: "TEMPLATE",
+    title: "Desktop App Tracker Sheet",
+    tag: "TOOL",
     link: "#",
   },
   {
     id: "2",
-    title: "API Documentation Generator (Example)",
+    title: "Dekstop App SAW Calculation",
     tag: "TOOL",
     link: "#",
   },
   {
     id: "3",
-    title: "UI Component Library (Example)",
-    tag: "TEMPLATE",
+    title: "Desktop App Inventory",
+    tag: "TOOL",
     link: "#",
   },
 ];
@@ -65,7 +65,7 @@ const testimonials: Testimonial[] = [
   {
     id: "1",
     name: "Catur Apriadi",
-    role: "Customer",
+    role: "Client",
     company: "Fastwork",
     content:
       "Satisfying result, delivered exactly as requested (Highly recommended).",
@@ -74,7 +74,7 @@ const testimonials: Testimonial[] = [
   {
     id: "2",
     name: "cofb4rv5",
-    role: "Customer",
+    role: "Client",
     company: "Fastwork",
     content:
       "Great work, very responsive and easy to discuss ideas with. The result met all expectations.",
@@ -83,7 +83,7 @@ const testimonials: Testimonial[] = [
   {
     id: "3",
     name: "***** (Akun anonim)",
-    role: "Customer",
+    role: "Client",
     company: "Fastwork",
     content: "Excellent.",
     rating: 5,
@@ -91,7 +91,7 @@ const testimonials: Testimonial[] = [
   {
     id: "4",
     name: "rpamwvnx",
-    role: "Customer",
+    role: "Client",
     company: "Fastwork",
     content: "Impressive work, the result is very satisfying.",
     rating: 5,
@@ -99,7 +99,7 @@ const testimonials: Testimonial[] = [
   {
     id: "5",
     name: "rpamwvnx",
-    role: "Customer",
+    role: "Client",
     company: "Fastwork",
     content:
       "Outstanding! Fast work, quick response, and very pleasant to communicate with.",
