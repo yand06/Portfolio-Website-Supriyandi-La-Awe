@@ -10,7 +10,7 @@ interface ProjectListProps {
 
 export const ProjectList = ({ projects }: ProjectListProps) => {
   const titleAnimation = useScrollAnimation();
-  
+
   return (
     <section id="projects" className="py-12">
       <div
@@ -22,7 +22,7 @@ export const ProjectList = ({ projects }: ProjectListProps) => {
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">
           Projects
         </h2>
-        <Button variant="ghost" className="text-primary hover:text-primary/80">
+        <Button variant="ghost" className="text-primary hover:text-white">
           View All
           <ExternalLink className="w-4 h-4 ml-2" />
         </Button>
@@ -31,13 +31,15 @@ export const ProjectList = ({ projects }: ProjectListProps) => {
       <div className="space-y-3">
         {projects.map((project, index) => {
           const projectAnimation = useScrollAnimation({ threshold: 0.3 });
-          
+
           return (
             <div
               key={project.id}
               ref={projectAnimation.elementRef}
               className={`transition-all duration-700 ${
-                projectAnimation.isVisible ? "scroll-visible" : "scroll-hidden-left"
+                projectAnimation.isVisible
+                  ? "scroll-visible"
+                  : "scroll-hidden-left"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
