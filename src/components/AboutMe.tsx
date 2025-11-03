@@ -1,4 +1,4 @@
-import { Code2, Database, Server, Globe } from "lucide-react";
+import { Code2, Database, Server, Globe, Wrench } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const AboutMe = () => {
@@ -9,22 +9,28 @@ export const AboutMe = () => {
     {
       icon: Code2,
       title: "Frontend Development",
-      description: "React, TypeScript, Tailwind CSS, Next.js",
+      description: "Vite, React, TypeScript, Tailwind CSS",
     },
     {
       icon: Server,
       title: "Backend Development",
-      description: "Node.js, Express, REST APIs, GraphQL",
+      description: "Java, Spring Boot, REST APIs, Apache Kafka",
     },
     {
       icon: Database,
       title: "Database Management",
-      description: "PostgreSQL, MongoDB, Redis, Supabase",
+      description: "PostgreSQL, MySQL, Redis",
     },
     {
       icon: Globe,
       title: "Cloud & DevOps",
-      description: "AWS, Docker, CI/CD, Vercel",
+      description: "Docker, Vercel",
+    },
+    {
+      icon: Wrench,
+      title: "Tools",
+      description:
+        "InteliJ IDEA, VS Code, Git, Postman, DBeaver, Redis Insight, Apache Netbeans, Laragon",
     },
   ];
 
@@ -48,19 +54,19 @@ export const AboutMe = () => {
         }`}
       >
         <p className="text-lg text-foreground mb-4 leading-relaxed">
-          I'm a passionate{" "}
+          I am a dedicated{" "}
           <span className="font-semibold text-primary">
             Fullstack Developer
           </span>{" "}
-          with over 5 years of experience building scalable web applications. I
-          specialize in creating efficient, user-friendly solutions that solve
-          real-world problems.
+          with over one year of professional experience in developing scalable
+          web applications. I focus on delivering efficient and user-centric
+          solutions that effectively address real-world challenges.
         </p>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          My approach combines clean code practices, modern technologies, and a
-          deep understanding of both frontend and backend architectures. I
-          thrive on turning complex requirements into elegant, maintainable
-          solutions.
+          My methodology integrates best practices in clean coding, modern
+          technologies, and a comprehensive understanding of both frontend and
+          backend architectures. I excel at transforming complex requirements
+          into elegant, maintainable systems.
         </p>
       </div>
 

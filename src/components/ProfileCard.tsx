@@ -32,7 +32,7 @@ export const ProfileCard = ({ profile }: ProfileCardProps) => {
       {/* Tablet & Desktop: Avatar di kanan */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
         {/* Avatar - Muncul pertama di mobile */}
-        <div className="flex-shrink-0 order-first md:order-last animate-slide-in-right">
+        <div className="flex-shrink-0 order-first md:order-last mt-3 md:mt-0 animate-slide-in-right">
           <img
             src={avatarImg}
             alt={profile.name}

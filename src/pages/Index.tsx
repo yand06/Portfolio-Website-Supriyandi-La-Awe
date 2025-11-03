@@ -19,43 +19,43 @@ const profile: Profile = {
 const projects: Project[] = [
   {
     id: "1",
-    title: "E-Commerce Platform",
+    title: "Agenin Project",
     description:
-      "Full-stack e-commerce solution with payment integration, inventory management, and real-time analytics.",
+      "Full-stack Agenin solution with user registration, referral system, calculate commissions, and tree structure.",
     link: "#",
   },
   {
     id: "2",
-    title: "Task Management System",
+    title: "JDTFLIX",
     description:
-      "Collaborative task management app with real-time updates, team features, and project tracking.",
-    link: "#",
+      "JDTFLIX is an application that provides a minimalist and modern interface for displaying movie data.",
+    link: "https://movie-task-fe.vercel.app/login",
   },
   {
     id: "3",
-    title: "Healthcare Dashboard",
+    title: "Goods Inventory",
     description:
-      "Medical dashboard for patient management, appointment scheduling, and health records.",
-    link: "#",
+      "Goods Inventory is a real-time desktop application for managing raw material and production stock, featuring stock control and reporting, built with Java and MySQL to enhance operational efficiency.",
+    link: "https://github.com/yand06/Inventory-Application-PT.Garasi-Creasindo",
   },
 ];
 
 const products: Product[] = [
   {
     id: "1",
-    title: "React Admin Template",
+    title: "React Admin Template (Example)",
     tag: "TEMPLATE",
     link: "#",
   },
   {
     id: "2",
-    title: "API Documentation Generator",
+    title: "API Documentation Generator (Example)",
     tag: "TOOL",
     link: "#",
   },
   {
     id: "3",
-    title: "UI Component Library",
+    title: "UI Component Library (Example)",
     tag: "TEMPLATE",
     link: "#",
   },
@@ -64,38 +64,45 @@ const products: Product[] = [
 const testimonials: Testimonial[] = [
   {
     id: "1",
-    name: "Sarah Johnson",
-    role: "Product Manager",
-    company: "TechCorp Inc",
+    name: "Catur Apriadi",
+    role: "Customer",
+    company: "Fastwork",
     content:
-      "Working with Supriyandi was an absolute pleasure. His attention to detail and ability to deliver high-quality code on time made our project a huge success.",
+      "Satisfying result, delivered exactly as requested (Highly recommended).",
     rating: 5,
   },
   {
     id: "2",
-    name: "Michael Chen",
-    role: "CTO",
-    company: "StartupXYZ",
+    name: "cofb4rv5",
+    role: "Customer",
+    company: "Fastwork",
     content:
-      "Exceptional developer with deep knowledge of both frontend and backend. He transformed our ideas into a scalable, production-ready application.",
+      "Great work, very responsive and easy to discuss ideas with. The result met all expectations.",
     rating: 5,
   },
   {
     id: "3",
-    name: "Amanda Rodriguez",
-    role: "Design Lead",
-    company: "Creative Studio",
-    content:
-      "His ability to translate designs into pixel-perfect, responsive interfaces is remarkable. Communication was smooth throughout the entire project.",
+    name: "***** (Akun anonim)",
+    role: "Customer",
+    company: "Fastwork",
+    content: "Excellent.",
     rating: 5,
   },
   {
     id: "4",
-    name: "David Kim",
-    role: "Founder",
-    company: "E-Commerce Plus",
+    name: "rpamwvnx",
+    role: "Customer",
+    company: "Fastwork",
+    content: "Impressive work, the result is very satisfying.",
+    rating: 5,
+  },
+  {
+    id: "5",
+    name: "rpamwvnx",
+    role: "Customer",
+    company: "Fastwork",
     content:
-      "Supriyandi built our entire e-commerce platform from scratch. The code is clean, well-documented, and easy to maintain. Highly recommended!",
+      "Outstanding! Fast work, quick response, and very pleasant to communicate with.",
     rating: 5,
   },
 ];

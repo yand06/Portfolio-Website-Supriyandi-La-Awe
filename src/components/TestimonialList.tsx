@@ -8,9 +8,9 @@ interface TestimonialListProps {
 
 export const TestimonialList = ({ testimonials }: TestimonialListProps) => {
   const titleAnimation = useScrollAnimation();
-  
+
   return (
-    <section className="py-12">
+    <section id="testimonials" className="py-12">
       <div
         ref={titleAnimation.elementRef}
         className={`transition-all duration-700 ${
@@ -25,13 +25,15 @@ export const TestimonialList = ({ testimonials }: TestimonialListProps) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {testimonials.map((testimonial, index) => {
           const cardAnimation = useScrollAnimation({ threshold: 0.2 });
-          
+
           return (
             <div
               key={testimonial.id}
               ref={cardAnimation.elementRef}
               className={`transition-all duration-700 ${
-                cardAnimation.isVisible ? "scroll-visible" : "scroll-hidden-scale"
+                cardAnimation.isVisible
+                  ? "scroll-visible"
+                  : "scroll-hidden-scale"
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >

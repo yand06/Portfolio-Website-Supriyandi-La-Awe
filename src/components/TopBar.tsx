@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Home, User, Briefcase, Mail } from "lucide-react";
+import { Home, User, MessageSquareQuote, Briefcase, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const TopBar = () => {
@@ -24,9 +24,7 @@ export const TopBar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+        scrolled ? "bg-white/80 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4">
@@ -52,6 +50,13 @@ export const TopBar = () => {
               aria-label="Projects"
             >
               <Briefcase className="w-5 h-5 text-foreground" />
+            </button>
+            <button
+              onClick={() => scrollToSection("testimonials")}
+              className="p-2 rounded-lg hover:bg-secondary hover:scale-110 transition-smooth"
+              aria-label="Projects"
+            >
+              <MessageSquareQuote className="w-5 h-5 text-foreground" />
             </button>
             <button
               onClick={() => scrollToSection("contact")}
