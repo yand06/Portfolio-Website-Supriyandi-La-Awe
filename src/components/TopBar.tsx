@@ -79,7 +79,7 @@ export const TopBar = () => {
             size="sm"
             onClick={() =>
               window.open(
-                "https://cv-task-fe.vercel.app/",
+                "https://my-cv-olive-eta.vercel.app/",
                 "_blank",
                 "noopener,noreferrer"
               )
