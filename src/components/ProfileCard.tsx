@@ -34,7 +34,7 @@ export const ProfileCard = ({ profile }: ProfileCardProps) => {
           <img
             src={avatarImg}
             alt={profile.name}
-            className="w-32 h-32 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full object-cover border-4 border-border shadow-md hover:scale-105 transition-transform duration-300"
+            className="w-32 h-32 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-3xl object-cover border-4 border-border shadow-md hover:scale-105 transition-transform duration-300"
           />
         </div>
 

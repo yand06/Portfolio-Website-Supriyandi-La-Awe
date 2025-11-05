@@ -6,127 +6,54 @@ import { ProductList } from "@/components/ProductList";
 import { TestimonialList } from "@/components/TestimonialList";
 import { CallToAction } from "@/components/CallToAction";
 import { Footer } from "@/components/Footer";
-import type { Profile, Project, Product, Testimonial } from "@/types";
+import type { Project } from "@/types";
+import { profile, products, testimonials } from "@/data";
 
-const profile: Profile = {
-  name: "Supriyandi La Awe",
-  role: "Fullstack Developer",
-  location: "Depok, Indonesia",
-  available: true,
-  email: "supriyandilaawe@gmail.com",
-};
+interface IndexProps {
+  projects: Project[];
+}
 
-const projects: Project[] = [
-  {
-    id: "1",
-    title: "Agenin Project",
-    description:
-      "Full-stack Agenin solution with user registration, referral system, calculate commissions, and tree structure.",
-    link: "#",
-  },
-  {
-    id: "2",
-    title: "JDTFLIX",
-    description:
-      "JDTFLIX is an application that provides a minimalist and modern interface for displaying movie data.",
-    link: "https://movie-task-fe.vercel.app/login",
-  },
-  {
-    id: "3",
-    title: "Goods Inventory",
-    description:
-      "Goods Inventory is a real-time desktop application for managing raw material and production stock, featuring stock control and reporting, built with Java and MySQL to enhance operational efficiency.",
-    link: "https://github.com/yand06/Inventory-Application-PT.Garasi-Creasindo",
-  },
-];
-
-const products: Product[] = [
-  {
-    id: "1",
-    title: "Desktop App Tracker Sheet",
-    tag: "TOOL",
-    link: "#",
-  },
-  {
-    id: "2",
-    title: "Dekstop App SAW Calculation",
-    tag: "TOOL",
-    link: "#",
-  },
-  {
-    id: "3",
-    title: "Desktop App Inventory",
-    tag: "TOOL",
-    link: "#",
-  },
-];
-
-const testimonials: Testimonial[] = [
-  {
-    id: "1",
-    name: "Catur Apriadi",
-    role: "Client",
-    company: "Fastwork",
-    content:
-      "Satisfying result, delivered exactly as requested (Highly recommended).",
-    rating: 5,
-  },
-  {
-    id: "2",
-    name: "cofb4rv5",
-    role: "Client",
-    company: "Fastwork",
-    content:
-      "Great work, very responsive and easy to discuss ideas with. The result met all expectations.",
-    rating: 5,
-  },
-  {
-    id: "3",
-    name: "***** (Akun anonim)",
-    role: "Client",
-    company: "Fastwork",
-    content: "Excellent.",
-    rating: 5,
-  },
-  {
-    id: "4",
-    name: "rpamwvnx",
-    role: "Client",
-    company: "Fastwork",
-    content: "Impressive work, the result is very satisfying.",
-    rating: 5,
-  },
-  {
-    id: "5",
-    name: "rpamwvnx",
-    role: "Client",
-    company: "Fastwork",
-    content:
-      "Outstanding! Fast work, quick response, and very pleasant to communicate with.",
-    rating: 5,
-  },
-];
-
-const Index = () => {
+const Index = ({ projects }: IndexProps) => {
   return (
     <div className="min-h-screen">
       <TopBar />
 
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <div id="home" className="pt-20 pb-8">
+        {/* Hero Section */}
+        <section id="home" className="pt-20 pb-8">
           <ProfileCard profile={profile} />
-        </div>
+        </section>
 
-        <AboutMe />
-        <ProjectList projects={projects} />
-        <ProductList products={products} />
-        <TestimonialList testimonials={testimonials} />
-        <CallToAction email={profile.email} />
+        {/* About Section */}
+        <section id="about">
+          <AboutMe />
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects">
+          <ProjectList projects={projects} />
+        </section>
+
+        {/* Products Section */}
+        <section id="products">
+          <ProductList products={products} />
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials">
+          <TestimonialList testimonials={testimonials} />
+        </section>
+
+        {/* Call to Action */}
+        <section id="contact">
+          <CallToAction email={profile.email} />
+        </section>
       </main>
 
-      <div className="container mx-auto px-4 max-w-4xl">
+      {/* Footer */}
+      <footer className="container mx-auto px-4 max-w-4xl">
         <Footer />
-      </div>
+      </footer>
     </div>
   );
 };

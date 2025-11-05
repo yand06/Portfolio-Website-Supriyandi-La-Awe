@@ -13,6 +13,15 @@ export interface Project {
   description: string;
   iconUrl?: string;
   link?: string;
+  subtitle?: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  heroImage?: string;
+  overview?: string;
+  technologies?: string[];
+  features?: string[];
+  screenshots?: string[];
+  reflection?: string;
 }
 
 export interface Product {

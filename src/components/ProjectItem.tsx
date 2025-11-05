@@ -1,4 +1,5 @@
 import { ChevronRight, Code2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import type { Project } from "@/types";
 
 interface ProjectItemProps {
@@ -7,8 +8,8 @@ interface ProjectItemProps {
 
 export const ProjectItem = ({ project }: ProjectItemProps) => {
   return (
-    <a
-      href={project.link || "#"}
+    <Link
+      to={`/projects/${project.id}`}
       className="block bg-card border border-border rounded-xl p-4 hover:bg-secondary/50 hover-lift hover-glow transition-smooth cursor-pointer group"
     >
       <div className="flex items-center gap-4">
@@ -27,6 +28,6 @@ export const ProjectItem = ({ project }: ProjectItemProps) => {
 
         <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-smooth flex-shrink-0" />
       </div>
-    </a>
+    </Link>
   );
 };
