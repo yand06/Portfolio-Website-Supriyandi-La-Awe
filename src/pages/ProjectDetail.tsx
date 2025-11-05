@@ -40,7 +40,7 @@ export const ProjectDetail = ({ projects }: ProjectDetailProps) => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header Section */}
         <div
           ref={headerAnimation.elementRef}
@@ -51,7 +51,7 @@ export const ProjectDetail = ({ projects }: ProjectDetailProps) => {
           <Button
             variant="ghost"
             onClick={() => navigate("/")}
-            className="mb-6 hover-glow group"
+            className="mb-8 hover-glow group"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Projects
