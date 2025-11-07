@@ -14,7 +14,7 @@ export const ProjectList = ({ projects }: ProjectListProps) => {
   const handleViewAll = () => {
     const projectsSection = document.getElementById("projects");
     window.open(
-      "https://github.com/yand06https://github.com/yand06?tab=repositories",
+      "https://github.com/yand06?tab=repositories",
       "_blank",
       "noopener,noreferrer"
     );
@@ -43,7 +43,7 @@ export const ProjectList = ({ projects }: ProjectListProps) => {
       </div>
 
       <div className="space-y-3">
-        {projects.map((project, index) => {
+        {projects.map((project) => {
           const projectAnimation = useScrollAnimation({ threshold: 0.3 });
 
           return (

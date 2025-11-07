@@ -29,7 +29,7 @@ export const ProductList = ({ products }: ProductListProps) => {
       </div>
 
       <div className="space-y-3">
-        {products.map((product, index) => {
+        {products.map((product) => {
           const productAnimation = useScrollAnimation({ threshold: 0.3 });
 
           return (
@@ -41,7 +41,6 @@ export const ProductList = ({ products }: ProductListProps) => {
                   ? "scroll-visible"
                   : "scroll-hidden-right"
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <ProductItem product={product} />
             </div>

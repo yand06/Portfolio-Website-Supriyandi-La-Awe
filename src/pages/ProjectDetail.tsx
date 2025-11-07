@@ -90,7 +90,7 @@ export const ProjectDetail = ({ projects }: ProjectDetailProps) => {
               heroAnimation.isVisible ? "scroll-visible" : "scroll-hidden-scale"
             }`}
           >
-            <div className="bg-card rounded-2xl shadow-lg overflow-hidden border border-border">
+            <div className="bg-card rounded-sm shadow-lg overflow-hidden border border-border">
               <img
                 src={project.heroImage}
                 alt={project.title}
@@ -204,7 +204,7 @@ export const ProjectDetail = ({ projects }: ProjectDetailProps) => {
                     key={screenshot}
                     ref={screenshotAnimation.elementRef}
                     data-delay-index={index}
-                    className={`stagger-item-lg bg-card rounded-xl shadow-md overflow-hidden border border-border hover-lift transition-all duration-700 ${
+                    className={`stagger-item-lg bg-card rounded-sm shadow-md overflow-hidden border border-border hover-lift transition-all duration-700 ${
                       screenshotAnimation.isVisible
                         ? "scroll-visible"
                         : "scroll-hidden-scale"

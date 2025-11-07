@@ -72,7 +72,7 @@ export const projects: Project[] = [
     technologies: ["Java Swing", "Apache NetBeans", "MySQL", "JDBC"],
     features: [
       "Modern Desktop UI using Java Swing",
-      "Sticky Sidebar navigation (Dashboard, Income, Budgeting, Transaction, About)",
+      "Sticky Sidebar navigation (Dashboard, Income, Budgeting, Transaction)",
       "Comprehensive dashboard: summary of total income, expense, breakdown by category & percentage",
       "Income management: supports multiple categories (Year Salary, Month Salary, Gaji Bulanan, Freelance, Bonus, Investasi, Passive Income, Day Salary)",
       "Budgeting module: per-category budgeting input and live summary",
