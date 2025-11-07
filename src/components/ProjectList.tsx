@@ -11,6 +11,15 @@ interface ProjectListProps {
 export const ProjectList = ({ projects }: ProjectListProps) => {
   const titleAnimation = useScrollAnimation();
 
+  const handleViewAll = () => {
+    const projectsSection = document.getElementById("projects");
+    window.open(
+      "https://github.com/yand06https://github.com/yand06?tab=repositories",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <section id="projects" className="py-12">
       <div
@@ -22,7 +31,12 @@ export const ProjectList = ({ projects }: ProjectListProps) => {
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">
           Projects
         </h2>
-        <Button variant="ghost" className="text-primary hover:text-white">
+        <Button
+          variant="ghost"
+          className="text-primary hover:text-white"
+          onClick={handleViewAll}
+          aria-label="View all projects"
+        >
           View All
           <ExternalLink className="w-4 h-4 ml-2" />
         </Button>
@@ -41,7 +55,6 @@ export const ProjectList = ({ projects }: ProjectListProps) => {
                   ? "scroll-visible"
                   : "scroll-hidden-left"
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
             >
               <ProjectItem project={project} />
             </div>
