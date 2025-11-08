@@ -89,6 +89,7 @@ All colors MUST be HSL.
     @apply bg-background text-foreground antialiased;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
       sans-serif;
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   html {
@@ -219,5 +220,17 @@ All colors MUST be HSL.
 
   .stagger-item-lg[data-delay-index="5"] {
     transition-delay: 750ms;
+  }
+
+  @layer utilities {
+    .transition-smooth {
+      @apply transition-all duration-300 ease-in-out;
+    }
+  }
+
+  @media (max-width: 768px) {
+    main {
+      @apply pb-20; /* Space untuk bottom nav */
+    }
   }
 }
