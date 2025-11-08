@@ -1,18 +1,31 @@
-import { ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { ProjectItem } from "./ProjectItem";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import type { Project } from "@/types";
+import { ProjectItem } from "./ProjectItem";
 
 interface ProjectListProps {
   projects: Project[];
 }
 
+// Komponen wrapper untuk setiap project item
+const AnimatedProjectItem = ({ project }: { project: Project }) => {
+  const projectAnimation = useScrollAnimation({ threshold: 0.3 });
+
+  return (
+    <div
+      ref={projectAnimation.elementRef}
+      className={`transition-all duration-700 ${
+        projectAnimation.isVisible ? "scroll-visible" : "scroll-hidden-left"
+      }`}
+    >
+      <ProjectItem project={project} />
+    </div>
+  );
+};
+
 export const ProjectList = ({ projects }: ProjectListProps) => {
   const titleAnimation = useScrollAnimation();
 
   const handleViewAll = () => {
-    const projectsSection = document.getElementById("projects");
     window.open(
       "https://github.com/yand06?tab=repositories",
       "_blank",
@@ -31,35 +44,12 @@ export const ProjectList = ({ projects }: ProjectListProps) => {
         <h2 className="text-2xl md:text-3xl font-bold text-foreground">
           Projects
         </h2>
-        <Button
-          variant="ghost"
-          className="text-primary hover:text-white"
-          onClick={handleViewAll}
-          aria-label="View all projects"
-        >
-          View All
-          <ExternalLink className="w-4 h-4 ml-2" />
-        </Button>
       </div>
 
       <div className="space-y-3">
-        {projects.map((project) => {
-          const projectAnimation = useScrollAnimation({ threshold: 0.3 });
-
-          return (
-            <div
-              key={project.id}
-              ref={projectAnimation.elementRef}
-              className={`transition-all duration-700 ${
-                projectAnimation.isVisible
-                  ? "scroll-visible"
-                  : "scroll-hidden-left"
-              }`}
-            >
-              <ProjectItem project={project} />
-            </div>
-          );
-        })}
+        {projects.map((project) => (
+          <AnimatedProjectItem key={project.id} project={project} />
+        ))}
       </div>
     </section>
   );

@@ -231,6 +231,7 @@ All colors MUST be HSL.
   @media (max-width: 768px) {
     main {
       @apply pb-20; /* Space untuk bottom nav */
+      padding-bottom: calc(5rem + env(safe-area-inset-bottom));
     }
   }
 }

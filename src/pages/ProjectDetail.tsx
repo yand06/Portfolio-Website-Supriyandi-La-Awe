@@ -145,7 +145,9 @@ export const ProjectDetail = ({ projects }: ProjectDetailProps) => {
             <h2 className="text-3xl font-bold text-foreground mb-6">
               Key Features
             </h2>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {" "}
+              {/* ✅ FIXED */}
               {project.features.map((feature, index) => (
                 <AnimatedGridItem
                   key={index}
@@ -154,7 +156,10 @@ export const ProjectDetail = ({ projects }: ProjectDetailProps) => {
                 >
                   <div className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <p className="text-foreground">{feature}</p>
+                    <p className="text-foreground text-sm md:text-base break-words">
+                      {" "}
+                      {feature}
+                    </p>
                   </div>
                 </AnimatedGridItem>
               ))}
@@ -180,7 +185,6 @@ export const ProjectDetail = ({ projects }: ProjectDetailProps) => {
                       alt={`Screenshot ${index + 1}`}
                       className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                     />
-                    {/* Overlay hint */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
                       <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
                         Click to view

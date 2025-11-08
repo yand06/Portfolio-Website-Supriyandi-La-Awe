@@ -10,15 +10,27 @@ import { projects } from "@/data/projects";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
+    <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index projects={projects} />} />
@@ -28,9 +40,9 @@ const App = () => (
             />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </ThemeProvider>
-      </BrowserRouter>
-    </TooltipProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

@@ -60,7 +60,6 @@ export const ProfileCard = ({ profile }: ProfileCardProps) => {
             </div>
           )}
 
-          {/* Buttons - Full width di mobile, inline di tablet+ */}
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <Button
               onClick={handleHireMe}

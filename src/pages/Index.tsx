@@ -51,7 +51,7 @@ const Index = ({ projects }: IndexProps) => {
       </main>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 max-w-4xl">
+      <footer className="container mx-auto px-4 max-w-4xl mb-16">
         <Footer />
       </footer>
     </div>
