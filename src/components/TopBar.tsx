@@ -88,9 +88,9 @@ export const TopBar = () => {
                 size="sm"
                 onClick={() =>
                   window.open(
-                    "https://my-cv-olive-eta.vercel.app/",
+                    "https://drive.google.com/file/d/1gfIXAb1eDbCpyJdg6m3z_29u8LRTMXbQ/preview",
                     "_blank",
-                    "noopener,noreferrer"
+                    "noopener,noreferrer",
                   )
                 }
                 className="bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-transform"
@@ -140,9 +140,9 @@ export const TopBar = () => {
           size="sm"
           onClick={() =>
             window.open(
-              "https://my-cv-olive-eta.vercel.app/",
+              "https://drive.google.com/file/d/1gfIXAb1eDbCpyJdg6m3z_29u8LRTMXbQ/preview",
               "_blank",
-              "noopener,noreferrer"
+              "noopener,noreferrer",
             )
           }
           className="h-9 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:scale-105 transition-transform pointer-events-auto"
