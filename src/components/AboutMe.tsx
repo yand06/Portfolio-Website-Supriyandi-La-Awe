@@ -1,6 +1,7 @@
 import { Code2, Database, Server, Globe, Wrench } from "lucide-react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { AnimatedGridItem } from "@/components/AnimatedGrid";
+import { useTilt } from "@/hooks/use-tilt";
 
 // Skill Item Component - Hook di top level
 interface SkillItemProps {
@@ -32,6 +33,59 @@ const SkillItem = ({ skill, index }: SkillItemProps) => {
         </div>
       </div>
     </AnimatedGridItem>
+  );
+};
+
+const AboutMeCard = () => {
+  const { setRef, style, handleMouseMove, handleMouseLeave } = useTilt();
+
+  return (
+    <div
+      ref={setRef}
+      style={style}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="bg-card rounded-2xl shadow-sm border border-border p-6 md:p-8"
+    >
+      <p className="text-base md:text-lg text-foreground mb-4 leading-relaxed">
+        I am a dedicated and passionate{" "}
+        <button
+          onClick={() =>
+            handleLinkClick(
+              "https://www.dicoding.com/blog/apa-itu-full-stack-developer-keahlian-keahlian-yang-harus-dikuasai/"
+            )
+          }
+          className="font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+        >
+          Fullstack Developer
+        </button>{" "}
+        specializing in building robust web applications using Java Spring
+        Boot, Hibernate, Vite, React, TypeScript, and Tailwind CSS. I focus
+        on creating efficient, user-friendly solutions with experience
+        delivering scalable backend systems and modern responsive frontends.
+      </p>
+      <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
+        I thrive in{" "}
+        <button
+          onClick={() =>
+            handleLinkClick(
+              "https://www.dicoding.com/blog/konsep-agile-pada-software-development/"
+            )
+          }
+          className="font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+        >
+          Agile
+        </button>{" "}
+        team environments, prioritizing clean code and automated testing to
+        ensure reliability. Beyond coding, I am continuously learning new
+        technologies and enjoy sharing knowledge through blogging and
+        mentoring.
+      </p>
+      <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+        I believe the right technology and effective collaboration drive
+        successful projects. Let's build something great together!
+      </p>
+    </div>
   );
 };
 
@@ -80,46 +134,7 @@ export const AboutMe = () => {
 
       {/* Description Card */}
       <AnimatedSection threshold={0.2} className="mb-8">
-        <div className="bg-card rounded-2xl shadow-sm border border-border p-6 md:p-8">
-          <p className="text-base md:text-lg text-foreground mb-4 leading-relaxed">
-            I am a dedicated and passionate{" "}
-            <button
-              onClick={() =>
-                handleLinkClick(
-                  "https://www.dicoding.com/blog/apa-itu-full-stack-developer-keahlian-keahlian-yang-harus-dikuasai/"
-                )
-              }
-              className="font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
-            >
-              Fullstack Developer
-            </button>{" "}
-            specializing in building robust web applications using Java Spring
-            Boot, Hibernate, Vite, React, TypeScript, and Tailwind CSS. I focus
-            on creating efficient, user-friendly solutions with experience
-            delivering scalable backend systems and modern responsive frontends.
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-4">
-            I thrive in{" "}
-            <button
-              onClick={() =>
-                handleLinkClick(
-                  "https://www.dicoding.com/blog/konsep-agile-pada-software-development/"
-                )
-              }
-              className="font-semibold text-primary hover:text-primary/80 transition-colors underline decoration-primary/30 hover:decoration-primary cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
-            >
-              Agile
-            </button>{" "}
-            team environments, prioritizing clean code and automated testing to
-            ensure reliability. Beyond coding, I am continuously learning new
-            technologies and enjoy sharing knowledge through blogging and
-            mentoring.
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            I believe the right technology and effective collaboration drive
-            successful projects. Let's build something great together!
-          </p>
-        </div>
+        <AboutMeCard />
       </AnimatedSection>
 
       {/* Skills Grid */}

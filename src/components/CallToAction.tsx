@@ -1,6 +1,7 @@
 import { Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useTilt } from "@/hooks/use-tilt";
 import fastworkIconImg from "@/assets/fastwork-icon.png";
 import { toast } from "sonner";
 
@@ -10,6 +11,7 @@ interface CallToActionProps {
 
 export const CallToAction = ({ email }: CallToActionProps) => {
   const ctaAnimation = useScrollAnimation({ threshold: 0.3 });
+  const { setRef, style, handleMouseMove, handleMouseLeave } = useTilt();
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -27,7 +29,16 @@ export const CallToAction = ({ email }: CallToActionProps) => {
   return (
     <section id="contact" className="py-16 md:py-24">
       <div
-        ref={ctaAnimation.elementRef}
+        ref={(el) => {
+          setRef(el);
+          // ✅ FIX: Hubungkan ke property .current dari useRef
+          if (ctaAnimation.elementRef) {
+            ctaAnimation.elementRef.current = el;
+          }
+        }}
+        style={style}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
         className={`bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 rounded-3xl p-8 md:p-12 text-center border border-border hover-glow transition-all duration-700 ${
           ctaAnimation.isVisible ? "scroll-visible" : "scroll-hidden-scale"
         }`}

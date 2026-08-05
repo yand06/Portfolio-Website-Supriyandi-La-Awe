@@ -1,5 +1,6 @@
 import { ChevronRight, Code2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTilt } from "@/hooks/use-tilt";
 import type { Project } from "@/types";
 
 interface ProjectItemProps {
@@ -7,8 +8,14 @@ interface ProjectItemProps {
 }
 
 export const ProjectItem = ({ project }: ProjectItemProps) => {
+  const { setRef, style, handleMouseMove, handleMouseLeave } = useTilt();
+
   return (
     <Link
+      ref={setRef}
+      style={style}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       to={`/projects/${project.id}`}
       className="block bg-card border border-border rounded-xl p-4 hover:bg-secondary/50 hover-lift hover-glow transition-smooth cursor-pointer group"
     >

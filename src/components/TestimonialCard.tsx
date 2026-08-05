@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import { useTilt } from "@/hooks/use-tilt";
 import type { Testimonial } from "@/types";
 
 interface TestimonialCardProps {
@@ -6,8 +7,16 @@ interface TestimonialCardProps {
 }
 
 export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
+  const { setRef, style, handleMouseMove, handleMouseLeave } = useTilt();
+
   return (
-    <div className="bg-card rounded-xl shadow-sm border border-border p-6 hover-lift transition-smooth h-full flex flex-col">
+    <div
+      ref={setRef}
+      style={style}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="bg-card rounded-xl shadow-sm border border-border p-6 hover-lift transition-smooth h-full flex flex-col"
+    >
       <div className="flex items-start gap-4 mb-4">
         <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
           {testimonial.avatarUrl ? (
@@ -20,7 +29,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
             <Quote className="w-6 h-6 text-primary" />
           )}
         </div>
-        
+
         <div className="flex-1">
           <h4 className="font-semibold text-foreground">
             {testimonial.name}

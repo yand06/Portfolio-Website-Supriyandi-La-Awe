@@ -1,5 +1,6 @@
 import { ChevronRight, Package } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useTilt } from "@/hooks/use-tilt";
 import type { Product } from "@/types";
 
 interface ProductItemProps {
@@ -7,8 +8,14 @@ interface ProductItemProps {
 }
 
 export const ProductItem = ({ product }: ProductItemProps) => {
+  const { setRef, style, handleMouseMove, handleMouseLeave } = useTilt();
+
   return (
     <a
+      ref={setRef}
+      style={style}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       href={product.link || "#"}
       className="block bg-card border border-border rounded-xl p-4 hover:bg-secondary/50 hover-lift hover-glow transition-smooth cursor-pointer group"
     >

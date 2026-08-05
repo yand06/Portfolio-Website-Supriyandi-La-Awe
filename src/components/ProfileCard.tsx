@@ -5,12 +5,15 @@ import { toast } from "sonner";
 import type { Profile } from "@/types";
 import avatarImg from "@/assets/avatar.jpg";
 import fastworkIconImg from "@/assets/fastwork-icon.png";
+import { useTilt } from "@/hooks/use-tilt";
 
 interface ProfileCardProps {
   profile: Profile;
 }
 
 export const ProfileCard = ({ profile }: ProfileCardProps) => {
+  const { setRef, style, handleMouseMove, handleMouseLeave } = useTilt();
+
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(profile.email);
     toast.success("Email copied to clipboard!");
@@ -25,7 +28,12 @@ export const ProfileCard = ({ profile }: ProfileCardProps) => {
   };
 
   return (
-    <div className="bg-card rounded-2xl shadow-sm border border-border p-4 sm:p-6 md:p-8 hover:shadow-md transition-smooth animate-fade-in">
+    <div
+      ref={setRef}
+      style={style}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="bg-card rounded-2xl shadow-sm border border-border p-4 sm:p-6 md:p-8 hover:shadow-md transition-smooth animate-fade-in">
       {/* Mobile: Avatar di tengah atas */}
       {/* Tablet & Desktop: Avatar di kanan */}
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
